@@ -1,5 +1,5 @@
 kind: pipeline
-name: default
+name: windows-backend
 
 platform:
   os: windows
@@ -17,3 +17,37 @@ steps:
   commands:
   - dir
   - dir env:\ | Out-String
+---
+kind: pipeline
+name: windows-frontend
+
+platform:
+  os: windows
+  arch: amd64
+
+steps:
+- name: build
+  image: microsoft/windowsservercore:1803
+  commands:
+  - dir env:\ | Out-String
+---
+kind: pipeline
+name: linux-backend
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: build
+  image: alpine
+  commands:
+  - ls
+---
+kind: pipeline
+name: after
+
+depends_on:
+- windows-backend
+- windows-frontend
+- linux-backend
