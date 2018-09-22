@@ -44,6 +44,12 @@ steps:
 kind: pipeline
 name: after
 
+steps:
+- name: notify
+  image: alpine
+  commands:
+  - ls
+
 depends_on:
 - windows-backend
 - windows-frontend
