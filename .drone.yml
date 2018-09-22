@@ -11,3 +11,8 @@ steps:
   commands:
   - dir c:\
   - whoami
+
+- name: and
+  image: microsoft/nanoserver:1803
+  commands:
+  - ping 1.1.1.1
