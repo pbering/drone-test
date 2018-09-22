@@ -15,4 +15,4 @@ steps:
 - name: and
   image: microsoft/windowsservercore:1803
   commands:
-  - ping 1.1.1.1
+  - dir
