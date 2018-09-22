@@ -16,3 +16,4 @@ steps:
   image: microsoft/windowsservercore:1803
   commands:
   - dir
+  - dir env:\
