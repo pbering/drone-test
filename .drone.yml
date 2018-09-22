@@ -7,12 +7,12 @@ platform:
 
 steps:
 - name: do-stuff
-  image: microsoft/nanoserver:1803
+  image: microsoft/windowsservercore:1803
   commands:
   - dir c:\
   - whoami
 
 - name: and
-  image: microsoft/nanoserver:1803
+  image: microsoft/windowsservercore:1803
   commands:
   - ping 1.1.1.1
