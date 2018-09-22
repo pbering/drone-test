@@ -12,11 +12,6 @@ steps:
   - dir c:\
   - whoami
 
-- name: and
-  image: microsoft/windowsservercore:1803
-  commands:
-  - dir
-  - dir env:\ | Out-String
 ---
 kind: pipeline
 name: windows-frontend
@@ -30,24 +25,12 @@ steps:
   image: microsoft/windowsservercore:1803
   commands:
   - dir env:\ | Out-String
----
-kind: pipeline
-name: linux-backend
 
-platform:
-  os: linux
-  arch: amd64
-
-steps:
-- name: build
-  image: alpine
-  commands:
-  - ls
 ---
+
 kind: pipeline
 name: after
 
 depends_on:
 - windows-backend
 - windows-frontend
-- linux-backend
