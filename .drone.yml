@@ -1,0 +1,12 @@
+kind: pipeline
+name: default
+
+platform:
+  os: windows
+  arch: amd64
+  
+steps:
+- name: do-stuff
+  image: nanoserver:1803
+  commands:
+  - dir c:\
