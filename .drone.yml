@@ -7,7 +7,7 @@ platform:
 
 steps:
 - name: do-stuff
-  image: nanoserver:1803
+  image: microsoft/nanoserver:1803
   commands:
   - dir c:\
   - whoami
